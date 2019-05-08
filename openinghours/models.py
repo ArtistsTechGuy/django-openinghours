@@ -72,7 +72,7 @@ class ClosingRules(models.Model):
         verbose_name_plural = _('Closing Rules')
         ordering = ['start']
 
-    company = models.ForeignKey(PREMISES_MODEL, verbose_name=_('Company'))
+    company = models.ForeignKey(PREMISES_MODEL, verbose_name=_('Company'), on_delete=models.CASCADE)
     start = models.DateTimeField(_('Start'))
     end = models.DateTimeField(_('End'))
     reason = models.TextField(_('Reason'), null=True, blank=True)
