@@ -47,7 +47,7 @@ class OpeningHours(models.Model):
         verbose_name_plural = _('Opening Hours')
         ordering = ['company', 'weekday', 'from_hour']
 
-    company = models.ForeignKey(PREMISES_MODEL, verbose_name=_('Company'))
+    company = models.ForeignKey(PREMISES_MODEL, verbose_name=_('Company'), on_delete=models.CASCADE)
     weekday = models.IntegerField(_('Weekday'), choices=WEEKDAYS)
     from_hour = models.TimeField(_('Opening'))
     to_hour = models.TimeField(_('Closing'))
