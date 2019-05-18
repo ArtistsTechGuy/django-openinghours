@@ -34,7 +34,7 @@ def to_weekday(date_obj_tpl):
             return w[1]
 
 
-@register.assignment_tag
+@register.simple_tag
 def is_open(location=None, attr=None):
     """
     Returns False if the location is closed, or the OpeningHours object
@@ -48,7 +48,7 @@ def is_open(location=None, attr=None):
     return obj
 
 
-@register.assignment_tag
+@register.simple_tag
 def next_time_open(location):
     """
     Returns the next possible OpeningHours object, or False
